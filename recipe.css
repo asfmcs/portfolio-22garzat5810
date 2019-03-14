@@ -1,0 +1,9 @@
+#nutella {color: rgb(175, 21, 21);}
+#banana {color: rgb(206, 202, 0);}
+#cookie {color: rgb(0, 85, 206);}
+body {font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;}
+table, th, td {border: 1px solid black;}
+body 
+{background-image: linear-gradient(rgb(132, 70, 70), rgb(201, 159, 159));}
+/* I got this gradient background in: https://www.w3schools.com/css/css3_gradients.asp */
+#title {background-color:rgb(187, 140, 140)}
