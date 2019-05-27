@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>pacmannice</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>pacmannice</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    var headradius = 17.5;
+var rectwidth = headradius * 2;
+var rectheight = 25;
+var eyeradius = 5;
+var pupilradius = 2;
+var centerX = getWidth()/2;
+var centerY = getHeight()/2;
+var numfeet = 2.5;
+var footradius = 6.25;
+
+function start() {
+    
+    var back = new Rectangle(500,1000);
+    back.setPosition(0, 0);
+    back.setColor(Color.BLACK);
+    add(back);
+    
+    var text = new Text("READY?!");
+    text.setColor(Color.WHITE);
+    text.setFont("30pt Calibri");
+    text.setPosition(135,300);
+    add(text);
+    
+    var line = new Line(10,5,390,5);
+    line.setColor(Color.BLUE);
+    line.setLineWidth(5);
+    add(line);
+    
+    var line2 = new Line(10,470,390,470);
+    line2.setColor(Color.BLUE);
+    line2.setLineWidth(5);
+    add(line2);
+    
+    var line2 = new Line(10,5,10,470);
+    line2.setColor(Color.BLUE);
+    line2.setLineWidth(5);
+    add(line2);
+    
+    var line2 = new Line(390,5,390,470);
+    line2.setColor(Color.BLUE);
+    line2.setLineWidth(5);
+    add(line2);
+    
+    drawPacman(centerX,centerY, Color.YELLOW);
+    drawGhost(180, 200, Color.RED);
+    drawGhost(230,200, Color.CYAN);
+    drawGhost(280,200, Color.PURPLE);
+    drawGhost(330,200, Color.GREEN);
+
+}
+
+
+function drawPacman(centerX, centerY, color){
+    var pacman  = new Arc(50, 50, 320, 0);
+    pacman.setPosition(100,200);
+    pacman.setColor(Color.YELLOW);
+    add(pacman);
+    
+}
+
+function drawGhost(centerX, centerY, color){
+    var headcirc = new Circle(headradius);
+    headcirc.setPosition(centerX, centerY);
+    headcirc.setColor(color);
+    add(headcirc);
+    
+    var body = new Rectangle(rectwidth,rectheight);
+    body.setPosition(centerX - 17.5, centerY);
+    body.setColor(color);
+    add(body);
+    
+    var lefteye = new Circle(eyeradius);
+    lefteye.setPosition(centerX - 7.5, centerY + 2.5);
+    lefteye.setColor(Color.WHITE);
+    add(lefteye);
+    
+    var righteye = new Circle(eyeradius);
+    righteye.setPosition(centerX + 7.5, centerY + 2.5);
+    righteye.setColor(Color.WHITE);
+    add(righteye);
+    
+    var leftpupil = new Circle(pupilradius);
+    leftpupil.setPosition(centerX - 9.5, centerY + 2);
+    leftpupil.setColor(Color.BLUE);
+    add(leftpupil);
+    
+    var rightpupil = new Circle(pupilradius);
+    rightpupil.setPosition(centerX + 6, centerY + 2);
+    rightpupil.setColor(Color.BLUE);
+    add(rightpupil);
+    
+    var foot = new Circle(footradius);
+    foot.setPosition(centerX + 11, centerY + rectheight);
+    foot.setColor(color);
+    add(foot);
+    
+    var foot = new Circle(footradius);
+    foot.setPosition(centerX - 11, centerY + rectheight);
+    foot.setColor(color);
+    add(foot);
+    
+    var foot = new Circle(footradius);
+    foot.setPosition(centerX, centerY + rectheight);
+    foot.setColor(color);
+    add(foot);
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
