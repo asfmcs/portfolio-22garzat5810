@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>medal design</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>medal design</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start(){
+    var gold= new Color(255, 235, 158);
+    var dgold= new Color(224, 200, 107);
+    var aqua= new Color(134, 239, 220);
+    var red= new Color(249, 102, 102);
+    var lgold= new Color(255, 245, 206);
+    
+    var myArc = new Arc(200, 76, 100, 0);
+    myArc.setPosition(202, 180);
+    myArc.setColor(red);
+    add(myArc);
+    
+    var myArc = new Arc(200, 80, 100, 0);
+    myArc.setPosition(202, 180);
+    myArc.setColor(aqua);
+    add(myArc);
+
+
+    var oshad= new Oval(105,195);
+    oshad.setPosition(213,243);
+    oshad.setColor(dgold);
+    add(oshad);
+    
+    var oval= new Oval(110,200);
+    oval.setPosition(getWidth()/2,getHeight()/2);
+    oval.setColor(gold);
+    add(oval);
+    
+    var myArc = new Arc(100, 340, 350, 0);
+    myArc.setPosition(160, 260);
+    myArc.setColor(dgold);
+    add(myArc);
+    
+    var myArc = new Arc(80, 350, 0, 0);
+    myArc.setPosition(180, 200);
+    myArc.setColor(dgold);
+    add(myArc);
+    
+    var myArc = new Arc(110, 345, 355, 0);
+    myArc.setPosition(150, 230);
+    myArc.setColor(dgold);
+    add(myArc);
+    
+    var myArc = new Arc(110, 165, 170, 0);
+    myArc.setPosition(250, 255);
+    myArc.setColor(lgold);
+    add(myArc);
+    
+    var myArc = new Arc(110, 170, 175, 0);
+    myArc.setPosition(260, 220);
+    myArc.setColor(lgold);
+    add(myArc);
+    
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
